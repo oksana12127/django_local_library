@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Date Writing List</h1>
+
+    {% if datewriting_list %}
+    <ul>
+
+      {% for date in datewriting_list %}
+      <li>
+        <a href="{{ date.get_absolute_url }}">{{ date }}</a>
+
+
+
+
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no books in the library.</p>
+    {% endif %}
+{% endblock %}

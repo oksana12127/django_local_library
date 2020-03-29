@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Date: {{ datewriting }}</h1>
+
+
+  <p><strong></strong> {% for book in datewriting.books.all %}
+<p><strong>{{ book.title }}</strong></p>
+      <p>{{ book.summary }}</p>
+      {% endfor %}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+
+
+
+  </div>
+{% endblock %}

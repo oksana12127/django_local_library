@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    {% for author in authors %}
+    <li>
+        {{ author.pk }} . {{ author.first_name }} {{author.last_name }}
+
+        <a href="{% url 'author_update' author.pk %}" class="btn"> Update book </a>
+
+
+
+        <a href="{% url 'author_delete' author.pk %}"> Delete book </a><br/>
+    </li>
+    {% endfor %}
+
+
+</form>
+{% endblock %}

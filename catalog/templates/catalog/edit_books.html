@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    {% for book in books %}
+    <li>
+        {{ book.pk }} . {{ book.isbn }} . {{ book.title}} , {{ book.author.first_name }} {{book.author.last_name }}
+
+        <a href="{% url 'book_update' book.pk %}" class="btn"> Update book </a>
+
+
+
+        <a href="{% url 'book_delete' book.pk %}"> Delete book </a><br/>
+    </li>
+    {% endfor %}
+
+
+</form>
+{% endblock %}
